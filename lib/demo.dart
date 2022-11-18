@@ -11,7 +11,7 @@ import 'package:get/get.dart';
 
 String message1 = 'Hello Debounce';
 String message2 = 'sign message';
-String message3 = 'clear message';
+String message3 = 'clear';
 
 String signMessage1 = '1. change to Debounce chain';
 String signMessage2 = '2. sign message in Debounce chain';
