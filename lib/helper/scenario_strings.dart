@@ -16,7 +16,7 @@ class ScenarioStrings {
   String changed(String chain) =>
       'Welcome back, $nickname. You are currently connected to $chain.';
 
-  String get changed1 => "Debounce is EVM compatible and we try to maintain compatibility. \n\nAurora-RPC server doesn't support the sign functions(sign, signTypedData) officially, but you can sign on the Debounce Network. \n\nTry it!";
+  String get changed1 => "Debounce is EVM compatible and  you can also sign on the Debounce Network. Try it!";
 
   String debounceMessage2(String sig) => 'Good job, $nickname! The signature is "$sig" and it is stored in Debounce Network.';
 

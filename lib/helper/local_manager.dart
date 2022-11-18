@@ -34,7 +34,7 @@ class LocalManager {
   static Future<void> reset(String account) async {
     setServiceChain(account, -1);
     setChangeNetwork(account, false);
-    setTxOffset(account, 0);
+    setTxOffset(account, -1);
   }
 
   // pref function

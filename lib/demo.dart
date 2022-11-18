@@ -19,7 +19,7 @@ String signMessage3 = '3. change to service chain';
 String signMessage4 = '4. save signature';
 
 String debounceMessage =
-    'Debounce Network is currently in alpha development stage and our goal is to transform the web2 data market into web3 in the most decentralized way and to keep the context of the EOA across chains.\n\nWe are everywhere and near you!';
+    'Debounce Network is currently in alpha development stage and our goal is to transform the web2 data market into web3 in the most decentralized way.';
 
 class Demo extends GetView<MessageController> {
   const Demo({super.key});

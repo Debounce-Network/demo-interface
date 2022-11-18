@@ -33,7 +33,7 @@ class NewsFeedController extends GetxController {
   }
 }
 
-String marketplaceMessage = 'Debounce is also a data marketplace.If you want to sell your data, you can do so by participating in the Debounce Node.';
+String marketplaceMessage = 'Debounce is also a data marketplace. Join the Debounce Network if you want to sell your data!';
 
 class NewsFeed extends GetView<NewsFeedController> {
   const NewsFeed({super.key});

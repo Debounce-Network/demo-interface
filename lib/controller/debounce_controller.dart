@@ -4,7 +4,7 @@ import 'package:debounce/constant/chain.dart';
 import 'package:debounce/contract/metabuild_contract.dart';
 import 'package:debounce/controller/connector.dart';
 import 'package:debounce/helper/local_manager.dart';
-import 'package:debounce/helper/senario_strings.dart';
+import 'package:debounce/helper/scenario_strings.dart';
 import 'package:debounce/model/message.dart';
 import 'package:get/get.dart';
 
