@@ -37,7 +37,11 @@ class DebounceController extends GetxController with StateMixin<bool> {
       start();
     });
 
-    change(false, status: RxStatus.loading());
+    connector.chainRx.listen((p0) {
+      if (!isSupportedChain(p0)) {
+        connector.changeNetwork(AURORA);
+      }
+    });
   }
 
   start() async {
@@ -61,7 +65,10 @@ class DebounceController extends GetxController with StateMixin<bool> {
   _fetch() async {
     ConnectController connector = Get.find();
 
-    if (!connector.isConnected) return;
+    if (!connector.isConnected) {
+      change(true, status: RxStatus.success());
+      return;
+    }
 
     // save last messages
     final contract = MetabuildContract.fromChainId(ChainId.DEBOUNCE);
@@ -91,15 +98,15 @@ class DebounceController extends GetxController with StateMixin<bool> {
     _reload.value = await LocalManager.getChangeNetwork(connector.address);
     _reload.refresh();
 
-    final currentChain = ChainData[connector.chainId];
+    final currentChainName = ChainData[connector.chainId]?.name ?? 'Unknown';
 
     if (reload) {
-      result.add(Message(message: helper.changed(currentChain!.name)));
+      result.add(Message(message: helper.changed(currentChainName)));
       result.add(Message(message: helper.changed1));
     } else {
       result.add(Message(message: helper.userMessage1, isUser: true));
       result.add(Message(message: helper.debounceMessage1));
-      result.add(Message(message: helper.currentNetwork(currentChain!.name)));
+      result.add(Message(message: helper.currentNetwork(currentChainName)));
       result.add(Message(message: helper.changeNetwork));
     }
 

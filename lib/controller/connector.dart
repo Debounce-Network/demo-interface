@@ -21,6 +21,8 @@ class ConnectController extends GetxController {
 
   RxString get addressRx => _address;
 
+  RxInt get chainRx => _chainId;
+
   Future<bool> isEthereumConnected() async {
     List<String>? accounts = await ethereum?.getAccounts();
     return accounts?.isNotEmpty ?? false;
